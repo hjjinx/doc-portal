@@ -1,0 +1,11 @@
+create table addresses (addressId int(10) PRIMARY KEY AUTO_INCREMENT, address varchar(255), city varchar(50), state varchar(50), zipCode int(20));
+
+create table contacts (contactId int(10) PRIMARY KEY AUTO_INCREMENT, phoneNumber int(15), email varchar(255));
+
+create table doctors(licenseNo int(20) PRIMARY KEY, firstName varchar(50), lastName varchar(50), speciality varchar(50), workingHours varchar(50), clinicId int(10));
+alter table doctors add FOREIGN KEY (clinicId) REFERENCES clinics(clinicId);
+
+create table clinics (clinicId int(10) NOT NULL AUTO_INCREMENT PRIMARY KEY, clinicName varchar(50), addressId int(10), contactId int(10));
+alter table clinics add FOREIGN KEY (addressID) REFERENCES addresses(addressId);
+alter table clinics add FOREIGN KEY (contactId) REFERENCES contacts(contactId);
+
