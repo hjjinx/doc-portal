@@ -24,6 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <base href="/"></base>
         <Router>
           <Navbar />
           <Switch>

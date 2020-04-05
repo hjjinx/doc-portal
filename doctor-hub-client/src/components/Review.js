@@ -30,12 +30,12 @@ export default class Review extends React.Component {
                           className="card-img-left bg-cover"
                           style={{
                             backgroundImage:
-                              'url("./assets/img/photos/photo-1.jpg")'
+                              'url("/assets/img/photos/photo-1.jpg")'
                           }}
                           href="#!"
                         >
                           <img
-                            src={"./assets/img/photos/photo-1.jpg"}
+                            src={"/assets/img/photos/photo-1.jpg"}
                             alt="..."
                             className="img-fluid d-md-none invisible"
                           />
@@ -44,12 +44,12 @@ export default class Review extends React.Component {
                           className="card-img-left bg-cover"
                           style={{
                             backgroundImage:
-                              'url("./assets/img/photos/photo-2.jpg")'
+                              'url("/assets/img/photos/photo-2.jpg")'
                           }}
                           href="#!"
                         >
                           <img
-                            src={"./assets/img/photos/photo-2.jpg"}
+                            src={"/assets/img/photos/photo-2.jpg"}
                             alt="..."
                             className="img-fluid d-md-none invisible"
                           />
