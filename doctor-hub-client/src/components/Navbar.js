@@ -6,7 +6,7 @@ export default class Navbar extends React.Component {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-white">
         <div className="container">
-          <Link className="navbar-brand" href="/">
+          <Link className="navbar-brand" to="/">
             <img
               src={"./assets/img/brand.png"}
               className="navbar-brand-img"
@@ -44,7 +44,7 @@ export default class Navbar extends React.Component {
                 <Link
                   className="nav-link"
                   id="navbarBookAppointment"
-                  href="#"
+                  to="#"
                   aria-expanded="false"
                 >
                   Book an Appointment
@@ -55,7 +55,7 @@ export default class Navbar extends React.Component {
                 <Link
                   className="nav-link"
                   id="navbarAccount"
-                  href="#"
+                  to="#"
                   aria-expanded="false"
                 >
                   My Appointments
@@ -65,7 +65,7 @@ export default class Navbar extends React.Component {
                 <Link
                   className="nav-link"
                   id="navbarDocumentation"
-                  href="#"
+                  to="/register/doctor"
                   aria-expanded="false"
                 >
                   Doctor Registration
@@ -75,7 +75,7 @@ export default class Navbar extends React.Component {
 
             <Link
               className="navbar-btn btn btn-sm btn-primary lift ml-auto"
-              href="#"
+              to="#"
               target="_blank"
             >
               Contact us
