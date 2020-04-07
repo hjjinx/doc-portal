@@ -8,7 +8,7 @@ export default class Footer extends React.Component {
           <div className="row align-items-center">
             <div className="col-12 col-md-5 col-lg-6 order-md-2">
               <img
-                src={"./assets/img/illustrations/illustration-2.png"}
+                src={"/assets/img/illustrations/illustration-2.png"}
                 alt="..."
                 className="img-fluid mb-6 mb-md-0"
               />

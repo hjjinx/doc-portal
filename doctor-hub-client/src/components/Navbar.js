@@ -8,7 +8,7 @@ export default class Navbar extends React.Component {
         <div className="container">
           <Link className="navbar-brand" to="/">
             <img
-              src={"./assets/img/brand.png"}
+              src={"/assets/img/brand.png"}
               className="navbar-brand-img"
               alt="..."
             />

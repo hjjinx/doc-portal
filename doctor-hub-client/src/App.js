@@ -17,7 +17,7 @@ class App extends React.Component {
               <Home />
             </Route>
             <Route exact path="/register/doctor">
-              <DocForm />>
+              <DocForm />
             </Route>
           </Switch>
           <Footer />

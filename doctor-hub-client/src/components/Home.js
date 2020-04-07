@@ -12,7 +12,7 @@ export default class Home extends React.Component {
             <div className="row align-items-center">
               <div className="col-12 col-md-5 col-lg-6 order-md-2">
                 <img
-                  src={"./assets/img/illustrations/illustration-1.png"}
+                  src={"/assets/img/illustrations/illustration-1.png"}
                   className="img-fluid mw-md-150 mw-lg-130 mb-6 mb-md-0"
                   alt="..."
                   data-aos="fade-up"
