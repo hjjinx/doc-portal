@@ -1,5 +1,6 @@
 import React from "react";
 import Axios from "axios";
+import loadjs from "loadjs";
 
 import DocCard from "./DocCard";
 
@@ -31,7 +32,24 @@ export default class ListDocs extends React.Component {
   };
 
   render() {
-    const DocCardList = [];
+    loadjs("/assets/libs/jquery/dist/jquery.min.js");
+    loadjs("/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js");
+    loadjs("/assets/libs/flickity/dist/flickity.pkgd.min.js");
+    loadjs("/assets/libs/flickity-fade/flickity-fade.js");
+    loadjs("/assets/libs/aos/dist/aos.js");
+    loadjs("/assets/libs/smooth-scroll/dist/smooth-scroll.min.js");
+    loadjs("/assets/libs/jarallax/dist/jarallax.min.js");
+    loadjs("/assets/libs/jarallax/dist/jarallax-video.min.js");
+    loadjs("/assets/libs/jarallax/dist/jarallax-element.min.js");
+    loadjs("/assets/libs/typed.js/lib/typed.min.js");
+    loadjs("/assets/libs/countup.js/dist/countUp.min.js");
+    loadjs("/assets/libs/highlightjs/highlight.pack.min.js");
+    loadjs("/assets/libs/%40fancyapps/fancybox/dist/jquery.fancybox.min.js");
+    loadjs("/assets/libs/isotope-layout/dist/isotope.pkgd.min.js");
+    loadjs("/assets/libs/imagesloaded/imagesloaded.pkgd.min.js");
+    loadjs("/assets/js/theme.min.js");
+
+    let DocCardList = [];
     if (this.state.filterSpeciality === "All") {
       for (let i = 0; i < this.state.doctors.length; i++)
         DocCardList[i] = (
@@ -57,7 +75,7 @@ export default class ListDocs extends React.Component {
               workingHours={this.state.doctors[i].workingHours}
             ></DocCard>
           );
-
+    console.log(DocCardList);
     return (
       <div>
         <section
