@@ -35,7 +35,10 @@ export default class Home extends React.Component {
                 </p>
 
                 <div className="text-center text-md-left">
-                  <Link to="#" className="btn btn-primary shadow lift mr-1">
+                  <Link
+                    to="/choosedoctor"
+                    className="btn btn-primary shadow lift mr-1"
+                  >
                     Find me a doctor{" "}
                     <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
                   </Link>

@@ -44,7 +44,7 @@ export default class Navbar extends React.Component {
                 <Link
                   className="nav-link"
                   id="navbarBookAppointment"
-                  to="#"
+                  to="/choosedoctor"
                   aria-expanded="false"
                 >
                   Book an Appointment

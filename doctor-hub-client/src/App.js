@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/Home";
 import Footer from "./components/Footer";
 import DocForm from "./components/DocForm";
+import ListDocs from "./components/ListDocs";
 
 class App extends React.Component {
   render() {
@@ -18,6 +19,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/register/doctor">
               <DocForm />
+            </Route>
+            <Route exact path="/choosedoctor">
+              <ListDocs />
             </Route>
           </Switch>
           <Footer />
