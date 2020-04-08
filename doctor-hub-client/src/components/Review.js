@@ -30,7 +30,7 @@ export default class Review extends React.Component {
                           className="card-img-left bg-cover"
                           style={{
                             backgroundImage:
-                              'url("/assets/img/photos/photo-1.jpg")'
+                              'url("/assets/img/photos/photo-1.jpg")',
                           }}
                           href="#!"
                         >
@@ -44,7 +44,7 @@ export default class Review extends React.Component {
                           className="card-img-left bg-cover"
                           style={{
                             backgroundImage:
-                              'url("/assets/img/photos/photo-2.jpg")'
+                              'url("/assets/img/photos/photo-2.jpg")',
                           }}
                           href="#!"
                         >
@@ -78,10 +78,15 @@ export default class Review extends React.Component {
                         <div className="w-100">
                           <div className="card-body">
                             <blockquote className="blockquote text-center mb-0">
-                              <p className="mb-5 mb-md-7">
+                              <p
+                                className="mb-5 mb-md-7"
+                                style={{
+                                  marginLeft: "1.5rem",
+                                  marginRight: "1.5rem",
+                                }}
+                              >
                                 “DocPortal is hands down the most useful thing
-                                I've ever used. I can't wait to use it again for
-                                my next appointment.”
+                                I've ever used. It makes appointments so easy.”
                               </p>
 
                               <footer className="blockquote-footer">
@@ -95,12 +100,16 @@ export default class Review extends React.Component {
                         <div className="w-100">
                           <div className="card-body">
                             <blockquote className="blockquote text-center mb-0">
-                              <p className="mb-5 mb-md-7">
-                                “DocPortal has made getting doctor appointments
-                                so simple! Booking an appointment with my doctor
-                                now takes just a couple of minutes and frees up
-                                a lot of time that otherwise would have been
-                                wasted in trying to set up the appointment.”
+                              <p
+                                className="mb-5 mb-md-7"
+                                style={{
+                                  marginLeft: "1.5rem",
+                                  marginRight: "1.5rem",
+                                }}
+                              >
+                                “Finding the best of the best doctors in the
+                                area now takes only a couple of minutes, thank
+                                you DocPortal!”
                               </p>
 
                               <footer className="blockquote-footer">

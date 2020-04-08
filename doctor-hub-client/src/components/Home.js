@@ -74,12 +74,12 @@ export default class Home extends React.Component {
           <div className="container">
             <div className="row">
               <div className="col-12 col-md-4" data-aos="fade-up">
-                <h3>Step 1: Choose a doctor</h3>
+                <h3>Find Doctors</h3>
 
                 <p className="text-muted mb-6 mb-md-0">
-                  Choose a doctor from a wide range of doctors registered with
-                  us. Our interface is carefully designed to help you choose the
-                  best doctor for you.
+                  We only list the very best doctors in Tricity. Our interface
+                  is carefully designed to help you choose the best doctor for
+                  you.
                 </p>
               </div>
               <div
@@ -87,11 +87,11 @@ export default class Home extends React.Component {
                 data-aos="fade-up"
                 data-aos-delay="50"
               >
-                <h3>Step 2: Fill out your details</h3>
+                <h3>Contact Doctors</h3>
 
                 <p className="text-muted mb-6 mb-md-0">
-                  We need these so we can forward them to your doctor to book an
-                  appointment. We do not sell your data.
+                  We do our very best to make sure that the most accurate and
+                  up-to-date contact details have been listed on DocPortal.
                 </p>
               </div>
               <div
@@ -99,11 +99,11 @@ export default class Home extends React.Component {
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <h3>Step 3: Choose a date and time</h3>
+                <h3>24x7 Dedicated Support</h3>
 
                 <p className="text-muted mb-0">
-                  And you're done! Set the date and time for your appointment on
-                  your calendar and rest easy.
+                  Facing any issues or have any questions? Our support team is
+                  there to help you, always. Just let us know!
                 </p>
               </div>
             </div>

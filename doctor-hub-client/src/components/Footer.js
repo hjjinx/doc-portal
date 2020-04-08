@@ -16,17 +16,14 @@ export default class Footer extends React.Component {
             <div className="col-12 col-md-7 col-lg-6 order-md-1">
               <h2>
                 Stay focused on your health. <br />
-                <span className="text-primary">
-                  Let us handle the appointment
-                </span>
-                .
+                <span className="text-primary">Let us help you save time.</span>
               </h2>
 
               <p className="font-size-lg text-gray-700 mb-6">
-                You have a life to live. Stop worrying about figuring out the
-                right time for calling the doctor's place for an appointment,
-                negotiating the appointment, and making sure that it has been
-                set up. Let us do that for you.
+                You have a life to live. Stop worrying about trying to find the
+                perfect doctor, getting their contact details, choosing the
+                right time for calling them, and trying to figure out how to get
+                to their clinic. Let us help you with that.
               </p>
 
               <div className="d-flex">

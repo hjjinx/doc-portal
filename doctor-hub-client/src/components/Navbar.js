@@ -43,24 +43,14 @@ export default class Navbar extends React.Component {
               <li className="nav-item">
                 <Link
                   className="nav-link"
-                  id="navbarBookAppointment"
+                  id="navbarFindDoctor"
                   to="/choosedoctor"
                   aria-expanded="false"
                 >
-                  Book an Appointment
+                  Find me a Doctor
                 </Link>
               </li>
 
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  id="navbarAccount"
-                  to="#"
-                  aria-expanded="false"
-                >
-                  My Appointments
-                </Link>
-              </li>
               <li className="nav-item">
                 <Link
                   className="nav-link"
