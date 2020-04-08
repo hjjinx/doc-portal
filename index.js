@@ -17,9 +17,9 @@ var connection = mysql.createConnection({
   user: "root",
   password: "",
   database: "doctor",
-  multipleStatements: true
+  multipleStatements: true,
 });
-connection.connect(err => {
+connection.connect((err) => {
   if (err) throw err;
   else console.log("Connected to SQL!");
 });
@@ -28,10 +28,39 @@ app.get("/alldoctors", (req, res) => {
   connection.query(
     `SELECT * FROM doctors d JOIN clinics c ON d.clinicId=c.clinicId JOIN addresses a ON a.addressId=c.clinicId JOIN contacts co ON co.contactId=c.contactId;`,
     (err, data) => {
-      if (err) console.log("Could not get all doctors");
+      if (err) {
+        console.log("Unable to get data from SQL");
+        console.error(err);
+        res.json({
+          message: "Unable to get data from SQL",
+          error: err,
+        });
+        return;
+      }
       res.json(data);
     }
   );
+});
+
+app.get("/doctor/:id", (req, res) => {
+  const licenseNo = req.params.id;
+  const query = `SELECT * FROM doctors d JOIN clinics c ON d.clinicId=c.clinicId JOIN addresses a ON a.addressId=c.clinicId JOIN contacts co ON co.contactId=c.contactId WHERE d.licenseNo="${licenseNo}";`;
+  connection.query(query, (err, data) => {
+    if (err) {
+      console.log("Unable to get data from SQL");
+      console.error(err);
+      res.json({
+        message: "Unable to get data from SQL",
+        error: err,
+      });
+      return;
+    }
+    console.log(data);
+    res.json({
+      message: "Success",
+      data,
+    });
+  });
 });
 
 app.post("/register/doctor", (req, res) => {
@@ -47,7 +76,7 @@ app.post("/register/doctor", (req, res) => {
     state,
     zipCode,
     phoneNumber,
-    email
+    email,
   } = req.body;
 
   let query = `INSERT INTO addresses(address, city, state, zipCode) VALUES(\'${address}\', \'${city}\', \'${state}\', ${zipCode});
@@ -58,7 +87,7 @@ app.post("/register/doctor", (req, res) => {
       console.error(err);
       res.json({
         message: "Unable to insert address/contact",
-        error: err
+        error: err,
       });
       return;
     }
@@ -72,7 +101,7 @@ app.post("/register/doctor", (req, res) => {
           console.error(err);
           res.json({
             message: "Unable to insert clinic",
-            error: err
+            error: err,
           });
           return;
         }
@@ -85,7 +114,7 @@ app.post("/register/doctor", (req, res) => {
               console.error(err);
               res.json({
                 message: "Unable to insert doctor",
-                error: err
+                error: err,
               });
               return;
             }

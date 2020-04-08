@@ -48,7 +48,6 @@ export default class ListDocs extends React.Component {
     loadjs("/assets/libs/isotope-layout/dist/isotope.pkgd.min.js");
     loadjs("/assets/libs/imagesloaded/imagesloaded.pkgd.min.js");
     loadjs("/assets/js/theme.min.js");
-
     let DocCardList = [];
     if (this.state.filterSpeciality === "All") {
       for (let i = 0; i < this.state.doctors.length; i++)
@@ -60,6 +59,7 @@ export default class ListDocs extends React.Component {
             address={this.state.doctors[i].address}
             city={this.state.doctors[i].city}
             workingHours={this.state.doctors[i].workingHours}
+            licenseNo={this.state.doctors[i].licenseNo}
           ></DocCard>
         );
     } else
@@ -73,9 +73,9 @@ export default class ListDocs extends React.Component {
               address={this.state.doctors[i].address}
               city={this.state.doctors[i].city}
               workingHours={this.state.doctors[i].workingHours}
+              licenseNo={this.state.doctors[i].licenseNo}
             ></DocCard>
           );
-    console.log(DocCardList);
     return (
       <div>
         <section
@@ -146,11 +146,11 @@ export default class ListDocs extends React.Component {
                     class="badge badge-pill badge-white-soft mr-1 mb-1"
                     href="#"
                     data-toggle="pill"
-                    data-filter="Gynecologist"
+                    data-filter="Gynaecologist"
                     data-target="#doctors"
                     onClick={this.changeSpecialityFilter}
                   >
-                    <span class="h6 text-uppercase">Gynecologist</span>
+                    <span class="h6 text-uppercase">Gynaecologist</span>
                   </a>
                   <a
                     class="badge badge-pill badge-white-soft mr-1 mb-1"

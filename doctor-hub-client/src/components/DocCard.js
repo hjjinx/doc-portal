@@ -5,7 +5,10 @@ export default class DocCard extends React.Component {
   render() {
     return (
       <div class="col-12 col-md-4 pediatrician">
-        <Link class="card shadow-light-lg mb-7 lift" to="#!">
+        <Link
+          class="card shadow-light-lg mb-7 lift"
+          to={`/doctor/${this.props.licenseNo}`}
+        >
           <div class="card-zoom">
             {/* <img class="card-img" src={"/assets/img/"} alt="..." /> */}
           </div>

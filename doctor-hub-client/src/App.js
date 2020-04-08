@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Footer from "./components/Footer";
 import DocForm from "./components/DocForm";
 import ListDocs from "./components/ListDocs";
+import Doctor from "./components/Doctor";
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,9 @@ class App extends React.Component {
             </Route>
             <Route exact path="/choosedoctor">
               <ListDocs />
+            </Route>
+            <Route exact path="/doctor/:id">
+              <Doctor />
             </Route>
           </Switch>
           <Footer />

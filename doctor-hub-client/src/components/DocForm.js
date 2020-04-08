@@ -15,15 +15,15 @@ export default class DocForm extends React.Component {
     state: "",
     zipCode: "",
     phoneNumber: "",
-    email: ""
+    email: "",
   };
-  handleInputChange = e => this.setState({ [e.target.name]: e.target.value });
-  handleSubmit = e => {
+  handleInputChange = (e) => this.setState({ [e.target.name]: e.target.value });
+  handleSubmit = (e) => {
     e.preventDefault();
     this.state.workingHours = this.state.startTime + " - " + this.state.endTime;
     console.log(this.state);
     const res = Axios.post(`http://localhost:6969/register/doctor`, this.state)
-      .then(res => {
+      .then((res) => {
         res = res.data;
         if (res.message === "Successfully inserted data") {
           // Show a positive result message here
@@ -31,7 +31,7 @@ export default class DocForm extends React.Component {
           // Show a negative result message here
         }
       })
-      .catch(err => {
+      .catch((err) => {
         // Show a negative result message here
         console.error(err);
       });
@@ -82,7 +82,6 @@ export default class DocForm extends React.Component {
                     class="form-control"
                     id="licenseNo"
                     placeholder="XXXXXXXXX"
-                    pattern="[0-9]*"
                     required
                   />
                 </div>
@@ -125,7 +124,7 @@ export default class DocForm extends React.Component {
                     <option>Family Physician</option>
                     <option>Internal Medicine</option>
                     <option>Pediatrician</option>
-                    <option>Gynecologist</option>
+                    <option>Gynaecologist</option>
                     <option>Surgeon</option>
                     <option>Psychiatrist</option>
                     <option>Cardiologist</option>
