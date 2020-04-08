@@ -65,8 +65,7 @@ export default class Navbar extends React.Component {
 
             <Link
               className="navbar-btn btn btn-sm btn-primary lift ml-auto"
-              to="#"
-              target="_blank"
+              to="/contactus"
             >
               Contact us
             </Link>
