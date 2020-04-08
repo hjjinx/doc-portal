@@ -22,7 +22,7 @@ class Doctor extends React.Component {
     Axios.get(`http://localhost:6969/doctor/${licenseNo}`)
       .then((res) => {
         res = res.data;
-        if (res.message === "Success" && res[0]) {
+        if (res.message === "Success" && res.data[0]) {
           res = res.data;
           this.setState({ ...res[0] });
         } else {

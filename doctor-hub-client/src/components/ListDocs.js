@@ -32,6 +32,11 @@ export default class ListDocs extends React.Component {
   };
 
   render() {
+    // The HTML page used to make this app uses these scripts. Upon some manipulation to the DOM
+    // these scripts need to be re-called in order to maintain the page.
+    // This is a bad solution that is extremely inefficient
+    // But it works so np
+
     loadjs("/assets/libs/jquery/dist/jquery.min.js");
     loadjs("/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js");
     loadjs("/assets/libs/flickity/dist/flickity.pkgd.min.js");
