@@ -1,33 +1,50 @@
 import React from "react";
 import Axios from "axios";
+import Spinner from "./Spinner";
 
 export default class DocForm extends React.Component {
   state = {
-    licenseNo: "",
-    firstName: "",
-    lastName: "",
-    speciality: "",
-    startTime: "",
-    endTime: "",
-    clinicName: "",
-    address: "",
-    city: "",
-    state: "",
-    zipCode: "",
-    phoneNumber: "",
-    email: "",
+    data: {
+      licenseNo: "",
+      firstName: "",
+      lastName: "",
+      speciality: "Family Physician",
+      startTime: "",
+      endTime: "",
+      clinicName: "",
+      address: "",
+      city: "",
+      state: "",
+      zipCode: "",
+      phoneNumber: "",
+      email: "",
+    },
+    loading: false,
   };
-  handleInputChange = (e) => this.setState({ [e.target.name]: e.target.value });
+  handleInputChange = (e) =>
+    this.setState({
+      data: { ...this.state.data, [e.target.name]: e.target.value },
+    });
   handleSubmit = (e) => {
+    this.setState({ loading: true });
     e.preventDefault();
-    this.state.workingHours = this.state.startTime + " - " + this.state.endTime;
-    console.log(this.state);
-    const res = Axios.post(`http://localhost:6969/register/doctor`, this.state)
+    this.state.data.workingHours =
+      this.state.data.startTime + " - " + this.state.data.endTime;
+    console.log(this.state.data);
+    const res = Axios.post(
+      `http://localhost:6969/register/doctor`,
+      this.state.data
+    )
       .then((res) => {
         res = res.data;
+        console.log(res);
         if (res.message === "Successfully inserted data") {
+          document.location.href = `/doctor/${this.state.data.licenseNo}`;
           // Show a positive result message here
         } else {
+          if (res.error.code === "ER_DUP_ENTRY")
+            alert("This License No. is already registered.");
+          else alert("There was an error. Please try again");
           // Show a negative result message here
         }
       })
@@ -35,9 +52,11 @@ export default class DocForm extends React.Component {
         // Show a negative result message here
         console.error(err);
       });
+    this.setState({ loading: false });
   };
 
   render() {
+    if (this.state.loading) return <Spinner />;
     return (
       <section>
         <div class="container d-flex flex-column">
@@ -113,7 +132,7 @@ export default class DocForm extends React.Component {
                 </div>
 
                 <div class="form-group mb-5">
-                  <label for="speciality">Specialty</label>
+                  <label for="speciality">Speciality</label>
                   <select
                     name="speciality"
                     onChange={this.handleInputChange}
