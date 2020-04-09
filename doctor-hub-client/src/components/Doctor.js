@@ -1,6 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import Axios from "axios";
+import loadjs from "loadjs";
 
 class Doctor extends React.Component {
   state = {
@@ -37,6 +38,8 @@ class Doctor extends React.Component {
       });
   }
   render() {
+    loadjs("/assets/libs/isotope-layout/dist/isotope.pkgd.min.js");
+
     return (
       <section className="pt-8 pt-md-11">
         <div className="container">
