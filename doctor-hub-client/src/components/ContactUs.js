@@ -1,6 +1,12 @@
 import React from "react";
 
 export default class Contact extends React.Component {
+  handleSubmit = (e) => {
+    alert(
+      "Your details have been received. A person will contact you shortly!"
+    );
+    document.location.href = "/";
+  };
   render() {
     return (
       <div>
@@ -160,7 +166,11 @@ export default class Contact extends React.Component {
                   </div>
                   <div class="row justify-content-center">
                     <div class="col-auto">
-                      <button type="submit" class="btn btn-primary lift">
+                      <button
+                        type="submit"
+                        class="btn btn-primary lift"
+                        onClick={this.handleSubmit}
+                      >
                         Send message
                       </button>
                     </div>

@@ -1,5 +1,7 @@
 import React from "react";
 import Axios from "axios";
+import { Link } from "react-router-dom";
+
 import Spinner from "./Spinner";
 
 export default class DocForm extends React.Component {
@@ -285,7 +287,7 @@ export default class DocForm extends React.Component {
                 </form>
 
                 <p class="mb-0 font-size-sm text-center text-muted">
-                  Have any questions? <a href="#">Contact us</a>.
+                  Have any questions? <Link to="/contactus">Contact us</Link>.
                 </p>
               </div>
             </div>
