@@ -67,11 +67,11 @@ export default class Footer extends React.Component {
                     <span
                       data-toggle="countup"
                       data-from="0"
-                      data-to="100"
+                      data-to="1000"
                       data-aos
                       data-aos-id="countup:in"
                     ></span>
-                    k+
+                    +
                   </h3>
                   <p className="text-gray-700 mb-0">Customers</p>
                 </div>
