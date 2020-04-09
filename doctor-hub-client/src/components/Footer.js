@@ -73,7 +73,7 @@ export default class Footer extends React.Component {
                     ></span>
                     k+
                   </h3>
-                  <p className="text-gray-700 mb-0">Doctors & Patients</p>
+                  <p className="text-gray-700 mb-0">Customers</p>
                 </div>
               </div>
             </div>
