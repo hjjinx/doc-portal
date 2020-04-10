@@ -46,7 +46,7 @@ export default class Home extends React.Component {
                   >
                     Find me a doctor{" "}
                     <i className="fe fe-arrow-right d-none d-md-inline ml-3"></i>
-                  </Link>
+                  </Link>{" "}
                   <a href="#steps" className="btn btn-primary-soft lift">
                     Learn more
                   </a>
