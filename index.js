@@ -26,7 +26,7 @@ connection.connect((err) => {
 
 app.get("/alldoctors", (req, res) => {
   connection.query(
-    `SELECT * FROM doctors d JOIN clinics c ON d.clinicId=c.clinicId JOIN addresses a ON a.addressId=c.clinicId JOIN contacts co ON co.contactId=c.contactId;`,
+    `SELECT * FROM doctors d JOIN clinics c ON d.clinicId=c.clinicId JOIN addresses a ON a.addressId=c.addressId JOIN contacts co ON co.contactId=c.contactId;`,
     (err, data) => {
       if (err) {
         console.log("Unable to get data from SQL");
@@ -44,7 +44,7 @@ app.get("/alldoctors", (req, res) => {
 
 app.get("/doctor/:id", (req, res) => {
   const licenseNo = req.params.id;
-  const query = `SELECT * FROM doctors d JOIN clinics c ON d.clinicId=c.clinicId JOIN addresses a ON a.addressId=c.clinicId JOIN contacts co ON co.contactId=c.contactId WHERE d.licenseNo="${licenseNo}";`;
+  const query = `SELECT * FROM doctors d JOIN clinics c ON d.clinicId=c.clinicId JOIN addresses a ON a.addressId=c.addressId JOIN contacts co ON co.contactId=c.contactId WHERE d.licenseNo="${licenseNo}";`;
   connection.query(query, (err, data) => {
     if (err) {
       console.log("Unable to get data from SQL");
@@ -94,7 +94,7 @@ app.post("/register/doctor", (req, res) => {
     const addressId = data[0].insertId;
     const contactId = data[1].insertId;
     connection.query(
-      `INSERT into clinics(clinicName, addressid, contactId) VALUES (\'${clinicName}\', \'${addressId}\', \'${contactId}\');`,
+      `INSERT into clinics(clinicName, addressid, contactId) VALUES (\"${clinicName}\", \'${addressId}\', \'${contactId}\');`,
       (err, data2) => {
         if (err) {
           console.log("Unable to insert clinic");
